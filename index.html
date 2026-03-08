@@ -105,42 +105,7 @@ footer{background:#0f172a;color:white;text-align:center;padding:20px;margin-top:
   </div>
 </div>
 
-<script>
-  // Ouvrir le formulaire modal
-  document.querySelectorAll('.button').forEach(btn=>{
-    btn.addEventListener('click', function(e){
-      e.preventDefault(); // empêche l'ouverture directe de WhatsApp
-      // On peut détecter le pack choisi
-      const packText = this.textContent.includes('Pro') ? 'Pack Pro 300DHS' : 'Pack Normal 200DHS';
-      document.getElementById('sendWhatsApp').setAttribute('data-pack', packText);
-      document.getElementById('modalForm').style.display = 'flex';
-    });
-  });
-
-  function closeModal(){
-    document.getElementById('modalForm').style.display = 'none';
-  }
-
-  // Envoyer sur WhatsApp
-  document.getElementById('sendWhatsApp').addEventListener('click', function(){
-    const fname = document.getElementById('fname').value.trim();
-    const lname = document.getElementById('lname').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const pack = this.getAttribute('data-pack');
-
-    if(!fname || !lname || !phone){
-      alert('Veuillez remplir tous les champs !');
-      return;
-    }
-
-    // Créer le message WhatsApp
-    const message = `Bonjour, je souhaite commander le ${pack}.\nNom: ${fname}\nPrénom: ${lname}\nTéléphone: ${phone}`;
-    const url = `https://wa.me/212612345678?text=${encodeURIComponent(message)}`; // Remplace par ton numéro
-    window.open(url,'_blank');
-
-    closeModal();
-  });
-</script>
+testtttttttttttttt
 </div>
 
 </div>
